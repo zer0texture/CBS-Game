@@ -2,7 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
+
+public enum LevelType
+{
+    Dungeon, 
+    Egypt,
+    Park
+}
+
 public class TunnelSpawner : MonoBehaviour {
+
+    static public LevelType levelType;
 
     public const int Max_Tunnel = 100;
     const int NUMBER_OF_TUNNELS = 4;        //1 MORE THAN THE NUMBER OF TUNNELS IN RESOURCES FOLDER
@@ -100,9 +110,17 @@ public class TunnelSpawner : MonoBehaviour {
     void spawnTunnelPiece()
     {
         print("WE GOT THERE");
+
+        
+
         int tempInt = Random.Range(1, NUMBER_OF_TUNNELS);
+
+        // For initial tunnel piece placement
+        //if (tunnel.Count == 0)
+        //    tempInt = 0;
+
         print(tempInt);
-        tempOBJ = (Resources.Load("TunnelSections/" + tempInt) as GameObject);
+        tempOBJ = (Resources.Load("TunnelSections/" + levelType + "/" + tempInt) as GameObject);
         float offset = 0;
         if (tunnel.Count == 0)
         {

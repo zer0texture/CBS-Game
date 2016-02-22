@@ -4,7 +4,8 @@ using System.Collections;
 public class CollectablesScript : buttonScript
 {
 
-    public enum collectType { KEYS, TROPHIES, INFO}
+    public enum collectType { KEYS, TROPHIES, INFO, END_ITEM}
+    public LevelType m_TunnelTypeToLoad;
 
     public int m_ID = -1;
     public float m_OffsetFromCamera = 1.2f;
@@ -13,6 +14,8 @@ public class CollectablesScript : buttonScript
     float m_WorkingTimescale;
     Vector3 m_PreviousMouseRot;
     float m_IgnoreTimeScale = 0.00001f;
+
+    public bool m_SkipInspecting = false;
 
     enum InspectorState
     {
@@ -68,11 +71,19 @@ public class CollectablesScript : buttonScript
     {
         if (m_State == InspectorState.INSPECTING)
         {
-            AddToInventory();         
+             EndPickup();        
         }
         else
         {
-            CloseUp();
+            if (!m_SkipInspecting)
+            {
+                CloseUp();
+            }
+            else
+            {
+                SaveItem();
+                EndPickup();  
+            }
             saveOnAction();
         }
     }
@@ -82,8 +93,26 @@ public class CollectablesScript : buttonScript
         transform.parent = m_Player.GetComponent<PlayerController>().Screen.transform.GetChild(1);
         transform.localPosition = Vector3.forward * m_OffsetFromCamera;
         m_Interractable = false;
-        m_State = InspectorState.INSPECTING;
 
+        m_State = InspectorState.INSPECTING;
+        SaveItem();
+
+    }
+
+    protected void EndPickup()
+    {
+        Time.timeScale = 1.0f;
+        Destroy(gameObject);
+
+        if(m_Type == collectType.END_ITEM)
+        {
+            Application.LoadLevel("Tunnel");
+            TunnelSpawner.levelType = m_TunnelTypeToLoad;
+        }
+    }
+
+    protected void SaveItem()
+    {
         Debug.Log(m_Player.name);
         PlayerController player = m_Player.GetComponent<PlayerController>();
         PlayerInventory.Collect newcollect = new PlayerInventory.Collect(m_ID, m_Type);
@@ -92,9 +121,4 @@ public class CollectablesScript : buttonScript
         player.GetInventory().CollectObject(newcollect);
     }
 
-    protected void AddToInventory()
-    {
-        Time.timeScale = 1.0f;
-        Destroy(gameObject);
-    }
 }
