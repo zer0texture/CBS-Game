@@ -112,6 +112,22 @@ public class WallHandIKController : MonoBehaviour
             m_Left = left;
             m_Right = right;
         }
+
+        if (gravity.grounded || gravity.onStairs)
+        {
+            animator.SetBool("TransFromAny", true);
+            animator.SetFloat("Vertical Innertia", 0.0f);
+        }
+        else
+        {
+            //animator.SetBool("TransFromAny", false);
+            animator.SetFloat("Vertical Innertia", 1.0f);
+        }
+    }
+
+    void DisableTransFromAny()
+    {
+        animator.SetBool("TransFromAny", false);
     }
 
 
