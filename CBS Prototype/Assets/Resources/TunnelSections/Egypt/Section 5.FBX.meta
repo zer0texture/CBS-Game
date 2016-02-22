@@ -1,100 +1,70 @@
 fileFormatVersion: 2
 guid: 6891848b20d8fb44aac288c43459a2fc
-timeCreated: 1454342854
+timeCreated: 1454941527
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Box004
+    100000: Cylinder016
     100002: Cylinder017
-    100004: Cylinder020
-    100006: Cylinder021
-    100008: Cylinder022
-    100010: Line033
-    100012: Line034
-    100014: Line035
-    100016: Line036
-    100018: Line037
-    100020: Line038
-    100022: Line039
-    100024: Line040
-    100026: Line041
-    100028: Line042
-    100030: Line043
-    100032: Line044
-    100034: //RootNode
-    400000: Box004
+    100004: Cylinder018
+    100006: Cylinder019
+    100008: Cylinder020
+    100010: Cylinder021
+    100012: Cylinder022
+    100014: Line024
+    100016: Line025
+    100018: Line026
+    100020: Line027
+    100022: //RootNode
+    400000: Cylinder016
     400002: Cylinder017
-    400004: Cylinder020
-    400006: Cylinder021
-    400008: Cylinder022
-    400010: Line033
-    400012: Line034
-    400014: Line035
-    400016: Line036
-    400018: Line037
-    400020: Line038
-    400022: Line039
-    400024: Line040
-    400026: Line041
-    400028: Line042
-    400030: Line043
-    400032: Line044
-    400034: //RootNode
-    2300000: Box004
+    400004: Cylinder018
+    400006: Cylinder019
+    400008: Cylinder020
+    400010: Cylinder021
+    400012: Cylinder022
+    400014: Line024
+    400016: Line025
+    400018: Line026
+    400020: Line027
+    400022: //RootNode
+    2300000: Cylinder016
     2300002: Cylinder017
-    2300004: Cylinder020
-    2300006: Cylinder021
-    2300008: Cylinder022
-    2300010: Line033
-    2300012: Line034
-    2300014: Line035
-    2300016: Line036
-    2300018: Line037
-    2300020: Line038
-    2300022: Line039
-    2300024: Line040
-    2300026: Line041
-    2300028: Line042
-    2300030: Line043
-    2300032: Line044
-    2300034: //RootNode
-    3300000: Box004
+    2300004: Cylinder018
+    2300006: Cylinder019
+    2300008: Cylinder020
+    2300010: Cylinder021
+    2300012: Cylinder022
+    2300014: Line024
+    2300016: Line025
+    2300018: Line026
+    2300020: Line027
+    2300022: //RootNode
+    3300000: Cylinder016
     3300002: Cylinder017
-    3300004: Cylinder020
-    3300006: Cylinder021
-    3300008: Cylinder022
-    3300010: Line033
-    3300012: Line034
-    3300014: Line035
-    3300016: Line036
-    3300018: Line037
-    3300020: Line038
-    3300022: Line039
-    3300024: Line040
-    3300026: Line041
-    3300028: Line042
-    3300030: Line043
-    3300032: Line044
-    3300034: //RootNode
-    4300000: Cylinder022
-    4300002: Cylinder021
-    4300004: Line041
-    4300006: Cylinder017
-    4300008: Cylinder020
-    4300010: Line033
-    4300012: Line034
-    4300014: Line035
-    4300016: Line036
-    4300018: Line037
-    4300020: Line038
-    4300022: Line039
-    4300024: Line040
-    4300026: Line044
-    4300028: Line042
-    4300030: Line043
-    4300032: Box004
-    4300034: Section 5
+    3300004: Cylinder018
+    3300006: Cylinder019
+    3300008: Cylinder020
+    3300010: Cylinder021
+    3300012: Cylinder022
+    3300014: Line024
+    3300016: Line025
+    3300018: Line026
+    3300020: Line027
+    3300022: //RootNode
+    4300000: Section 2
+    4300002: Cylinder019
+    4300004: Cylinder020
+    4300006: Line024
+    4300008: Line025
+    4300010: Cylinder022
+    4300012: Cylinder017
+    4300014: Line027
+    4300016: Cylinder016
+    4300018: Cylinder018
+    4300020: Cylinder021
+    4300022: Line026
     7400000: Take 001
     9500000: //RootNode
   materials:

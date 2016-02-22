@@ -1,67 +1,70 @@
 fileFormatVersion: 2
 guid: c3977ec5518404642a613afcb50974e1
-timeCreated: 1454342854
+timeCreated: 1454941530
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Box003
-    100002: Cylinder016
-    100004: Cylinder017
-    100006: Cylinder018
-    100008: Cylinder019
-    100010: Line027
-    100012: Line028
-    100014: Line029
-    100016: Line030
-    100018: Line032
-    100020: //RootNode
-    100022: Section 3
-    400000: Box003
-    400002: Cylinder016
-    400004: Cylinder017
-    400006: Cylinder018
-    400008: Cylinder019
-    400010: Line027
-    400012: Line028
-    400014: Line029
-    400016: Line030
-    400018: Line032
-    400020: //RootNode
-    400022: Section 3
-    2300000: Box003
-    2300002: Cylinder016
-    2300004: Cylinder017
-    2300006: Cylinder018
-    2300008: Cylinder019
-    2300010: Line027
-    2300012: Line028
-    2300014: Line029
-    2300016: Line030
-    2300018: Line032
-    2300020: //RootNode
-    3300000: Box003
-    3300002: Cylinder016
-    3300004: Cylinder017
-    3300006: Cylinder018
-    3300008: Cylinder019
-    3300010: Line027
-    3300012: Line028
-    3300014: Line029
-    3300016: Line030
-    3300018: Line032
-    3300020: //RootNode
-    4300000: Cylinder018
-    4300002: Cylinder016
-    4300004: Cylinder017
-    4300006: Cylinder019
-    4300008: Line027
-    4300010: Line028
-    4300012: Line029
-    4300014: Line030
-    4300016: Line032
-    4300018: Box003
-    4300020: Section 10
+    100000: Line032
+    100002: Line033
+    100004: Line034
+    100006: Line035
+    100008: //RootNode
+    100010: Square Column
+    100012: Square Column001
+    100014: Square Column002
+    100016: Square Column003
+    100018: Square Column004
+    100020: Square Column005
+    100022: Square Column006
+    400000: Line032
+    400002: Line033
+    400004: Line034
+    400006: Line035
+    400008: //RootNode
+    400010: Square Column
+    400012: Square Column001
+    400014: Square Column002
+    400016: Square Column003
+    400018: Square Column004
+    400020: Square Column005
+    400022: Square Column006
+    2300000: Line032
+    2300002: Line033
+    2300004: Line034
+    2300006: Line035
+    2300008: //RootNode
+    2300010: Square Column
+    2300012: Square Column001
+    2300014: Square Column002
+    2300016: Square Column003
+    2300018: Square Column004
+    2300020: Square Column005
+    2300022: Square Column006
+    3300000: Line032
+    3300002: Line033
+    3300004: Line034
+    3300006: Line035
+    3300008: //RootNode
+    3300010: Square Column
+    3300012: Square Column001
+    3300014: Square Column002
+    3300016: Square Column003
+    3300018: Square Column004
+    3300020: Square Column005
+    3300022: Square Column006
+    4300000: Section 4
+    4300002: Line035
+    4300004: Line032
+    4300006: Line033
+    4300008: Line034
+    4300010: Square Column
+    4300012: Square Column001
+    4300014: Square Column002
+    4300016: Square Column003
+    4300018: Square Column004
+    4300020: Square Column005
+    4300022: Square Column006
     7400000: Take 001
     9500000: //RootNode
   materials:

@@ -1,64 +1,45 @@
 fileFormatVersion: 2
 guid: 40c8a92692f512643a6986979c7dde73
-timeCreated: 1454342854
+timeCreated: 1454941525
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Box001
-    100002: Cylinder002
-    100004: Cylinder003
-    100006: Cylinder005
-    100008: Cylinder006
-    100010: Group001
-    100012: Group002
-    100014: Line001
-    100016: Plane002
-    100018: Plane004
-    100020: Plane005
-    100022: //RootNode
-    400000: Box001
-    400002: Cylinder002
-    400004: Cylinder003
-    400006: Cylinder005
-    400008: Cylinder006
-    400010: Group001
-    400012: Group002
-    400014: Line001
-    400016: Plane002
-    400018: Plane004
-    400020: Plane005
-    400022: //RootNode
-    2300000: Box001
-    2300002: Cylinder002
-    2300004: Cylinder003
-    2300006: Cylinder005
-    2300008: Cylinder006
-    2300010: Line001
-    2300012: Plane002
-    2300014: Plane004
-    2300016: Plane005
-    2300018: //RootNode
-    3300000: Box001
-    3300002: Cylinder002
-    3300004: Cylinder003
-    3300006: Cylinder005
-    3300008: Cylinder006
-    3300010: Line001
-    3300012: Plane002
-    3300014: Plane004
-    3300016: Plane005
-    3300018: //RootNode
-    4300000: Cylinder006
-    4300002: Box001
-    4300004: Cylinder005
-    4300006: Cylinder003
-    4300008: Cylinder002
-    4300010: Plane002
-    4300012: Plane004
-    4300014: Plane005
-    4300016: Line001
-    4300018: Section 14
+    100000: Cylinder016
+    100002: Cylinder024
+    100004: Cylinder025
+    100006: Cylinder026
+    100008: Cylinder027
+    100010: Cylinder028
+    100012: //RootNode
+    400000: Cylinder016
+    400002: Cylinder024
+    400004: Cylinder025
+    400006: Cylinder026
+    400008: Cylinder027
+    400010: Cylinder028
+    400012: //RootNode
+    2300000: Cylinder016
+    2300002: Cylinder024
+    2300004: Cylinder025
+    2300006: Cylinder026
+    2300008: Cylinder027
+    2300010: Cylinder028
+    2300012: //RootNode
+    3300000: Cylinder016
+    3300002: Cylinder024
+    3300004: Cylinder025
+    3300006: Cylinder026
+    3300008: Cylinder027
+    3300010: Cylinder028
+    3300012: //RootNode
+    4300000: Section 2
+    4300002: Cylinder016
+    4300004: Cylinder024
+    4300006: Cylinder025
+    4300008: Cylinder026
+    4300010: Cylinder027
+    4300012: Cylinder028
     7400000: Take 001
     9500000: //RootNode
   materials:

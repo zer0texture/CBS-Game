@@ -17,12 +17,9 @@ public class TunnelObstacleCollide : MonoBehaviour {
 	
 	}
 
-    void onCollisonEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        
-
-
-
+        // Move snake forward?
         Instantiate(particlePrefab, gameObject.transform.position, nullQuart);
         Destroy(gameObject);
     }

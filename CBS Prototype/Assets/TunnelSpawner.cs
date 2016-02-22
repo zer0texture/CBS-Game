@@ -15,7 +15,7 @@ public class TunnelSpawner : MonoBehaviour {
     static public LevelType levelType;
 
     public const int Max_Tunnel = 100;
-    const int NUMBER_OF_TUNNELS = 4;        //1 MORE THAN THE NUMBER OF TUNNELS IN RESOURCES FOLDER
+    const int NUMBER_OF_TUNNELS = 18;        //1 MORE THAN THE NUMBER OF TUNNELS IN RESOURCES FOLDER
     public float tunnelSpeed = 0.1f;
     public bool tunnelStarted = false;
     public bool snakeSpawned = false;
@@ -95,8 +95,6 @@ public class TunnelSpawner : MonoBehaviour {
 
                 }
             }
-            //print("tunnel count/Max Tunnel " + tunnel.Count + " " + Max_Tunnel);
-            print("Max tunnel: " + Max_Tunnel + "   tunnel count " + tunnel.Count);
             if (tunnel.Count < Max_Tunnel)
             {
                 spawnTunnelPiece();
@@ -109,15 +107,11 @@ public class TunnelSpawner : MonoBehaviour {
 
     void spawnTunnelPiece()
     {
-        print("WE GOT THERE");
-
-        
-
         int tempInt = Random.Range(1, NUMBER_OF_TUNNELS);
 
         // For initial tunnel piece placement
-        //if (tunnel.Count == 0)
-        //    tempInt = 0;
+        if (tunnel.Count == 0)
+            tempInt = 0;
 
         print(tempInt);
         tempOBJ = (Resources.Load("TunnelSections/" + levelType + "/" + tempInt) as GameObject);
@@ -130,6 +124,12 @@ public class TunnelSpawner : MonoBehaviour {
         {
             tempOBJ.transform.position = tunnel[tunnel.Count - 1].transform.position;
             offset = tempOBJ.gameObject.GetComponent<Renderer>().bounds.extents.x + tunnel[tunnel.Count - 1].gameObject.GetComponent<Renderer>().bounds.extents.x;
+
+            if(levelType == LevelType.Egypt)
+            {
+                //offset *= 2;
+                offset = tempOBJ.gameObject.GetComponent<Renderer>().bounds.size.x;
+            }
         }
         tempOBJ.name = ("tunnel " + (tunnelName));
         tunnelName++;
@@ -139,15 +139,19 @@ public class TunnelSpawner : MonoBehaviour {
         tempOBJ.gameObject.transform.Translate(offset, 0, 0);
         tunnel.Add(Instantiate(tempOBJ));
 
-        //foreach (Transform trans in transform)
-        //{
-        //    Debug.Log("LOLOLOLOL");
-        //    trans.gameObject.AddComponent<TunnelObstacleCollide>();
-        //}
-
-        //foreach (TunnelObstacleCollide obstacle in tempOBJ.transform.GetComponentsInChildren<TunnelObstacleCollide>())
-        //{
-        //    obstacle.SnakeChase = tempSnake;
-        //}
+        foreach (Transform trans in tunnel[tunnel.Count - 1].transform)
+        {
+            TunnelObstacleCollide obst = trans.gameObject.AddComponent<TunnelObstacleCollide>();
+            obst.SnakeChase = tempSnake;
+            obst.particlePrefab = Resources.Load<GameObject>("TunnelSections/Puff");
+            Collider coll = trans.gameObject.GetComponent<Collider>();
+            PlayerSpawner sp = trans.gameObject.GetComponent<PlayerSpawner>();
+            if(coll == null && sp == null)
+            {
+                MeshCollider meshcoll = trans.gameObject.AddComponent<MeshCollider>();
+                meshcoll.convex = true;
+                meshcoll.isTrigger = true;
+            }
+        }
     }
 }
