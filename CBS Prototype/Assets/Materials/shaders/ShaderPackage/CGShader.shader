@@ -159,7 +159,8 @@ Properties {
             {
                float3 vertexToLightSource = 
                   _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
-               float distance = length(vertexToLightSource);
+               //float distance = length(vertexToLightSource);
+			   float distance = 1.0;
                attenuation = 1.0 / distance; // linear attenuation 
                lightDirection = normalize(vertexToLightSource);
             }
