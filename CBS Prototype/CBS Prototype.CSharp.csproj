@@ -146,12 +146,14 @@
     <Compile Include="Assets\TrapFloor.cs" />
     <Compile Include="Assets\TunnelObstacleCollide.cs" />
     <Compile Include="Assets\TunnelSpawner.cs" />
+    <Compile Include="Assets\UIRescale.cs" />
     <Compile Include="Assets\WallHandIKController.cs" />
     <Compile Include="Assets\cameraTarget.cs" />
     <Compile Include="Assets\cameraV2.cs" />
     <Compile Include="Assets\customTimer.cs" />
     <Compile Include="Assets\hideZone.cs" />
     <Compile Include="Assets\lanternRefill.cs" />
+    <Compile Include="Assets\lightCollider.cs" />
     <Compile Include="Assets\textureController.cs" />
     <Compile Include="Assets\textureDrop.cs" />
     <Compile Include="Assets\trapTrigger.cs" />
@@ -165,6 +167,7 @@
     <None Include="Assets\Materials\shaders\ShaderPackage\ColorOnly.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\EdgeDetectFromColours.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\RandomColor.shader" />
+    <None Include="Assets\Materials\shaders\TextContour.shader" />
     <None Include="Assets\PlayerSpawnerBackup.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

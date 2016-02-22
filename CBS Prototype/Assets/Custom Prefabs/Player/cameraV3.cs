@@ -40,7 +40,7 @@ public class cameraV3 : MonoBehaviour {
 
         /// -- Debugging -- \\\
         // Logs the ideal distance between the camera and the player \\
-        Debug.Log("TD = " + idealDistanceFromTarget);
+       // Debug.Log("TD = " + idealDistanceFromTarget);
 	}
 	
 	void FixedUpdate () 

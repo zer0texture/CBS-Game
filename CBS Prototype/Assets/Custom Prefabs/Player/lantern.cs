@@ -4,7 +4,7 @@ using System;
 
 public class lantern : MonoBehaviour, GameSaveManager.IGameSaver {
 
-    Light spotlight;
+    public Light spotlight;
     float maxOil;
     float currentOil;
     float oilConsumption = 5.0f;
@@ -28,7 +28,7 @@ public class lantern : MonoBehaviour, GameSaveManager.IGameSaver {
     {
         AddAsListener();
 
-        spotlight = GetComponentInChildren<Light>();
+        //spotlight = GetComponentInChildren<Light>();
         maxOil = UISlider.GetSliderValue(UISlider.SliderType.OIL_MAX);
         currentOil = maxOil;
         UISlider.m_Bar_Oil = currentOil;
@@ -84,7 +84,7 @@ public class lantern : MonoBehaviour, GameSaveManager.IGameSaver {
             {
                 pLantern.SetActive(false);
                 pLanternActive = false;
-                print("POWER LANTERN OFF");
+               // print("POWER LANTERN OFF");
             }
         }
         else

@@ -219,12 +219,12 @@ public class GameSaveManager : MonoBehaviour
         {
             if (saver == null)
                 continue;
-            Debug.Log("Saving structures first");
+           // Debug.Log("Saving structures first");
             saver.Save();
         }
         if (m_GameSave.Count > 0)
         {
-            Debug.Log("Saving");
+           // Debug.Log("Saving");
 
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             des.Key = m_EncryptionKey;
@@ -254,7 +254,7 @@ public class GameSaveManager : MonoBehaviour
     {
         if (CheckSave())
         {
-            Debug.Log("Loading");
+           // Debug.Log("Loading");
 
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
             des.Key = m_EncryptionKey;

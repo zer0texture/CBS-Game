@@ -129,6 +129,7 @@
     <None Include="Assets\Materials\shaders\ShaderPackage\ColorOnly.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\EdgeDetectFromColours.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\RandomColor.shader" />
+    <None Include="Assets\Materials\shaders\TextContour.shader" />
     <None Include="Assets\PlayerSpawnerBackup.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

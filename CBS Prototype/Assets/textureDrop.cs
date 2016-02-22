@@ -80,7 +80,7 @@ public class textureDrop : MonoBehaviour
                         {
                             if (m_RightFootPrint)
                             {
-                                Debug.Log("Right Print");
+                              //  Debug.Log("Right Print");
                                 //newFootprint.transform.Rotate(Vector3.up, 180);//TEMP FIX FOR ROTATED TEXTURES
                                 newFootprint = Instantiate(m_footprintPrefab, myRay.point, transform.rotation) as GameObject;
                                 newFootprint.transform.Rotate(Vector3.up, 180);
@@ -96,7 +96,7 @@ public class textureDrop : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("Left Print");
+                              //  Debug.Log("Left Print");
                                 //transform.Rotate(Vector3.up, 180);  //TEMP FIX FOR ROTATED TEXTURES                           
                                 newFootprint = Instantiate(m_footprintPrefab, myRay.point, transform.rotation) as GameObject;
                                 newFootprint.transform.Rotate(Vector3.up, 180);
@@ -105,7 +105,7 @@ public class textureDrop : MonoBehaviour
                             }
                             newFootprint.name = "footprint " + m_footprintIndex;
                             m_RightFootPrint = (!m_RightFootPrint);
-                            print(m_RightFootPrint);
+                           // print(m_RightFootPrint);
                             newFootprint.transform.parent = myRay.transform;
                             m_footprintIndex++;
                         }

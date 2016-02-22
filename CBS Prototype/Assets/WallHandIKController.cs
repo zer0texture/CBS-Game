@@ -98,7 +98,7 @@ public class WallHandIKController : MonoBehaviour
         }
         else
         {
-            Debug.Log("MOVING NOT");
+           // Debug.Log("MOVING NOT");
             transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0.0f, 0.0f, 0.0f), m_RotateTimer / m_RotateLerpTime);
             animator.SetFloat("Forward Innertia", 0.0f);
             animator.SetFloat("Side Innertia", 0.0f);
@@ -133,7 +133,7 @@ public class WallHandIKController : MonoBehaviour
 
     void OnAnimatorIK(int layerIndex)
     {
-        Debug.Log("checking IK");
+        //Debug.Log("checking IK");
 
         ///
         /// RIGHT HAND

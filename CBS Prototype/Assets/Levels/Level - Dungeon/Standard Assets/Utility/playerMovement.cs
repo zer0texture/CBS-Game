@@ -129,4 +129,10 @@ public class playerMovement : MonoBehaviour
             rb.AddForce(-transform.up.normalized * stairGrav, ForceMode.Force);
         }
     }
+    void OnTriggerStay()
+    {
+        // Used for lightCollider due to unity bug
+        // https://issuetracker.unity3d.com/issues/triggercollider-ontriggerstay-is-not-called-for-child-objects
+        // FUCKY AS FUCK
+    }
 }
