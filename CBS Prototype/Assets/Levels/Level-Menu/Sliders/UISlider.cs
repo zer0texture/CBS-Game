@@ -7,7 +7,7 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
 
     public Slider slider;
 
-
+    static public int m_Slider_Gender;
     static int m_Slider_NumberOfSnakes;
     static float m_Slider_LanternSize;
     static int m_Slider_Health;
@@ -15,10 +15,12 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
     static float m_Slider_LengthOfTrail;
     static public int m_Bar_Health;
     static public float m_Bar_Oil;
+    
 
 
     public enum SliderType
     {
+        GENDER,
         NUM_OF_SNAKES,
         LANTERN_SIZE,
         HEALTH,
@@ -41,6 +43,8 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
     {
         switch (sliderType)
         {
+            case SliderType.GENDER:
+                return m_Slider_Gender;
             case SliderType.NUM_OF_SNAKES:
                 return m_Slider_NumberOfSnakes;
             case SliderType.LANTERN_SIZE:
@@ -61,6 +65,9 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
     {
         switch (sliderType)
         {
+            case SliderType.GENDER:
+                m_Slider_Gender = (int)value;
+                break;
             case SliderType.NUM_OF_SNAKES:
                 m_Slider_NumberOfSnakes = (int)value;
                 break;
@@ -82,6 +89,8 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
     [System.Serializable]
     public class SliderSave : GameSaveManager.IGameSave
     {
+        [System.Xml.Serialization.XmlElement]
+        public int gender;
         [System.Xml.Serialization.XmlElement]
         public int snakesNum;
         [System.Xml.Serialization.XmlElement]
@@ -144,6 +153,9 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
     {
         switch (sliderType)
         {
+            case SliderType.GENDER:
+                m_Slider_Gender = (int)value;
+                break;
             case SliderType.NUM_OF_SNAKES:
                 m_Slider_NumberOfSnakes = (int)value;
                 break;
@@ -170,6 +182,7 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
         if (sliderSave == null)
             sliderSave = new SliderSave();
 
+        sliderSave.gender = m_Slider_Gender;
         sliderSave.snakesNum = m_Slider_NumberOfSnakes;
         sliderSave.lanternSize = m_Slider_LanternSize;
         sliderSave.playerHealth = m_Slider_Health;
@@ -187,6 +200,7 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
 
         if (!sliderSave.LoadedSuccessfully())
         {
+            m_Slider_Gender = 0;
             m_Slider_NumberOfSnakes = 50;
             m_Slider_LanternSize = 10;
             m_Slider_Health = 100;
@@ -195,6 +209,7 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
         }
         else
         {
+            m_Slider_Gender = sliderSave.gender;
             m_Slider_NumberOfSnakes = sliderSave.snakesNum;
             m_Slider_LanternSize = sliderSave.lanternSize;
             m_Slider_Health = sliderSave.playerHealth;
@@ -203,6 +218,9 @@ public class UISlider : MonoBehaviour, GameSaveManager.IGameSaver
 
             switch (sliderType)
             {
+                case SliderType.GENDER:
+                    slider.value = sliderSave.gender;
+                    break;
                 case SliderType.NUM_OF_SNAKES:
                     slider.value = sliderSave.snakesNum;
                     break;
