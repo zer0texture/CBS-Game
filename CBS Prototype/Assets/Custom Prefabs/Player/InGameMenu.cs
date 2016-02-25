@@ -100,7 +100,8 @@ public class InGameMenu : MonoBehaviour
                     GameSaveManager.m_Instance.StartLoading();
                     GameSaveManager.SceneState save = new GameSaveManager.SceneState();
                     save.Load();
-                    Application.LoadLevel(save.m_SceneNo);
+                    //Application.LoadLevel(save.m_SceneNo);
+                    LevelLoader.m_Instance.LoadLevel(save.m_SceneNo);
 
                 }
 
@@ -120,7 +121,8 @@ public class InGameMenu : MonoBehaviour
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 30, 250, 40), inGameMenu_ReturnToMenu))
                 {
-                    Application.LoadLevel(0);
+                    //Application.LoadLevel(0);
+                    LevelLoader.m_Instance.LoadLevel(0);
                 }
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 80, 250, 40), inGameMenu_Quit))

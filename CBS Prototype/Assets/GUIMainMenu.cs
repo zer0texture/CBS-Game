@@ -106,8 +106,9 @@ public class GUIMainMenu : MonoBehaviour, GameSaveManager.IGameSaver
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 250, 40), mainMenu_NewGame))
                 {
-                   // mouseNoises.PlayOneShot(mouseClick,1);
-                    Application.LoadLevel(1);
+                    // mouseNoises.PlayOneShot(mouseClick,1);
+                    //Application.LoadLevel(1);
+                    LevelLoader.m_Instance.LoadLevel(1, "", true);
                 }
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 60, 250, 40), mainMenu_LoadGame))
@@ -116,7 +117,8 @@ public class GUIMainMenu : MonoBehaviour, GameSaveManager.IGameSaver
                    // mouseNoises.PlayOneShot(mouseClick, 1);
                     GameSaveManager.SceneState save = new GameSaveManager.SceneState();
                     save.Load();
-                    Application.LoadLevel(save.m_SceneNo);
+                    //Application.LoadLevel(save.m_SceneNo);
+                    LevelLoader.m_Instance.LoadLevel(save.m_SceneNo);
                 }
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 20, 250, 40), mainMenu_Sliders))

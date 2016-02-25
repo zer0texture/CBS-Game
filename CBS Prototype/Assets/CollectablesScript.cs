@@ -106,7 +106,8 @@ public class CollectablesScript : buttonScript
 
         if(m_Type == collectType.END_ITEM)
         {
-            Application.LoadLevel("Tunnel");
+            //Application.LoadLevel("Tunnel");
+            LevelLoader.m_Instance.LoadLevel(-1, "Tunnel");
             TunnelSpawner.levelType = m_TunnelTypeToLoad;
         }
     }

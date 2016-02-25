@@ -48,7 +48,8 @@ public class buttonScript : MonoBehaviour {
         if (levelToLoad > 0)
         {
             saveOnAction();
-            Application.LoadLevel(levelToLoad);
+            //Application.LoadLevel(levelToLoad);
+            LevelLoader.m_Instance.LoadLevel(levelToLoad, "", true);
         }
 
     }
