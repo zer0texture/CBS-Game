@@ -6,6 +6,7 @@ Properties {
       _SpecColor ("Specular Material Color", Color) = (1,1,1,1) 
       _Shininess ("Shininess", Float) = 10
       _Intensity ("Intensity", Float) = 1
+	  _MaxIntensity("Max Intensity", Float) = 1
 	  _OutlineColor("Outline Color", Color) = (0,0,0,1)
    }
    SubShader {  
@@ -76,6 +77,7 @@ Properties {
          uniform float4 _SpecColor; 
          uniform float _Shininess;
          uniform float _Intensity;
+		 uniform float _MaxIntensity;
 
 		 uniform float4x4 _LightMatrix0; // transformation 
 										 // from world to light space (from Autolight.cginc)
@@ -160,7 +162,11 @@ Properties {
                float3 vertexToLightSource = 
                   _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
                //float distance = length(vertexToLightSource);
-			   float distance = 1.0;
+			   //float distance = 1.0;
+			   //float distance = length(vertexToLightSource) / 10;
+			   float distance = length(vertexToLightSource);
+			   if (distance < 1.0 / _MaxIntensity)
+				   distance = 1.0 / _MaxIntensity;
                attenuation = 1.0 / distance; // linear attenuation 
                lightDirection = normalize(vertexToLightSource);
             }
