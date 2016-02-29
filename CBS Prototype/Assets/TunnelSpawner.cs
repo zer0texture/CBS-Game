@@ -28,6 +28,7 @@ public class TunnelSpawner : MonoBehaviour {
     List<GameObject> tunnel;
     Quaternion nullQuart;
     GameObject tempOBJ;
+    public GameObject tempPortal;
     public GameObject tempSnake;
 
 	// Use this for initialization
@@ -68,6 +69,7 @@ public class TunnelSpawner : MonoBehaviour {
              // //  print("Max Tunnel = " + Max_Tunnel + " tunnel count = " + tunnel.Count);
 
             }
+
         }
 
 	}
@@ -131,6 +133,12 @@ public class TunnelSpawner : MonoBehaviour {
                 offset = tempOBJ.gameObject.GetComponent<Renderer>().bounds.size.x;
             }
         }
+        if (tunnel.Count == Max_Tunnel-1)
+        {
+            //tempPortal.transform.position = tempOBJ.transform.position;
+            tempPortal.transform.position = new Vector3(tempOBJ.transform.position.x, 5 ,tempOBJ.transform.position.z);
+            Instantiate(tempPortal);
+        }
         tempOBJ.name = ("tunnel " + (tunnelName));
         tunnelName++;
         
@@ -146,12 +154,16 @@ public class TunnelSpawner : MonoBehaviour {
             obst.particlePrefab = Resources.Load<GameObject>("TunnelSections/Puff");
             Collider coll = trans.gameObject.GetComponent<Collider>();
             PlayerSpawner sp = trans.gameObject.GetComponent<PlayerSpawner>();
-            if(coll == null && sp == null)
+            if(!(coll == null && sp == null))
             {
                 MeshCollider meshcoll = trans.gameObject.AddComponent<MeshCollider>();
                 meshcoll.convex = true;
                 meshcoll.isTrigger = true;
+                trans.gameObject.GetComponent<Collider>().enabled = false;
             }
+
+            
         }
+
     }
 }

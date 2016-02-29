@@ -84,6 +84,7 @@
     <Compile Include="Assets\Custom Prefabs\Player\playerSave.cs" />
     <Compile Include="Assets\GUIMainMenu.cs" />
     <Compile Include="Assets\GameSaveManager.cs" />
+    <Compile Include="Assets\LevelLoader.cs" />
     <Compile Include="Assets\Levels\Level - Dungeon\Hunt.cs" />
     <Compile Include="Assets\Levels\Level - Dungeon\HuntAi.cs" />
     <Compile Include="Assets\Levels\Level - Dungeon\MoveTo.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets\Materials\shaders\ShaderPackage\PostProcessFilter.cs" />
     <Compile Include="Assets\PlayerInventory.cs" />
     <Compile Include="Assets\PlayerSpawner.cs" />
+    <Compile Include="Assets\PortalScript.cs" />
     <Compile Include="Assets\StoryTrigger.cs" />
     <Compile Include="Assets\TextMessageHandler.cs" />
     <Compile Include="Assets\TrapFloor.cs" />
@@ -151,7 +153,6 @@
     <Compile Include="Assets\cameraTarget.cs" />
     <Compile Include="Assets\cameraV2.cs" />
     <Compile Include="Assets\customTimer.cs" />
-    <Compile Include="Assets\hideZone.cs" />
     <Compile Include="Assets\lanternRefill.cs" />
     <Compile Include="Assets\lightCollider.cs" />
     <Compile Include="Assets\textureController.cs" />
@@ -160,8 +161,6 @@
     <Compile Include="Assets\verticalOrbit.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Levels\Level - Dungeon\Materials\shaders\CGShader.shader" />
-    <None Include="Assets\Levels\Level - Dungeon\Materials\shaders\GLSLShader.shader" />
     <None Include="Assets\Materials\shaders\GLSLShader.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\CGShader.shader" />
     <None Include="Assets\Materials\shaders\ShaderPackage\ColorOnly.shader" />

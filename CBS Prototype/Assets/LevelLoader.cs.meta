@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 6af6126812fbede4a99332acd9e9d929
-timeCreated: 1456411671
+timeCreated: 1456746308
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_LoadingBackground: {fileID: 11400000, guid: 1955c72ed45935d4b83db64c57a1cd84,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

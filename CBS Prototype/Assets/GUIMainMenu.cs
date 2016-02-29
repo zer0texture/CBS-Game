@@ -69,7 +69,10 @@ public class GUIMainMenu : MonoBehaviour, GameSaveManager.IGameSaver
    
     void Update()
     { 
-        
+        if (Application.loadedLevel != 0)
+        {
+            this.enabled = false;
+        }
     }
 
     void OnGUI()
