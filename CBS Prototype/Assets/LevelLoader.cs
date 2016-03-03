@@ -9,23 +9,15 @@ public class LevelLoader : MonoBehaviour
     private int m_Tick = 0;
     private bool m_SaveOnLoad = false;
 
-    /*
-    public static LevelLoader Instance()
-    {
-        if (m_Instance == null)
-            m_Instance = new LevelLoader();
-        return m_Instance;
-    }
-    */
-
     void Start()
     {
-        if (m_Instance != null)
+        if (m_Instance != null && m_Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
-        else
-            m_Instance = this;
+
+        m_Instance = this;
 
         DontDestroyOnLoad(gameObject);
     }

@@ -90,7 +90,7 @@ public class CollectablesScript : buttonScript
 
     protected void CloseUp()
     {
-        transform.parent = m_Player.GetComponent<PlayerController>().Screen.transform.GetChild(1);
+        transform.parent = m_Player.GetComponent<PlayerController>().Camera.transform.GetChild(1);
         transform.localPosition = Vector3.forward * m_OffsetFromCamera;
         m_Interractable = false;
 

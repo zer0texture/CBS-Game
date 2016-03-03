@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour, GameSaveManager.IGameSaver
     public float currentTime = 0.0f;
     public float startTime = 0.0f;
 
-    public GameObject Screen;
+    public GameObject Camera;
 
 
     int playerHealth = 100;

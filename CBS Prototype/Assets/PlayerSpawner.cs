@@ -4,11 +4,13 @@ using System.Collections;
 public class PlayerSpawner : MonoBehaviour {
     public static GameObject playerInst = null;
     private GameObject cameraInst = null;
+    private GameObject uiInst = null;
 
     static bool playerSpawned = false;
     public bool pSpawnVis = playerSpawned;
     public GameObject playerPrefab;
     public GameObject cameraPrefab;
+    public GameObject uiPrefab;
     // Use this for initialization
 
     private float respawnTimer = 0.0f;
@@ -44,13 +46,14 @@ public class PlayerSpawner : MonoBehaviour {
             Vector3 cameraPos = new Vector3(0,2.0f,-4f);
             cameraPos += transform.position;
             cameraInst = Instantiate(cameraPrefab, cameraPos, transform.rotation) as GameObject;
-            cameraV3 myCam = cameraInst.transform.FindChild("Player Camera").GetComponent<cameraV3>();
+            uiInst = Instantiate(uiPrefab, Vector3.zero, transform.rotation) as GameObject;
+            cameraV3 myCam = cameraInst.GetComponent<cameraV3>();
             myCam.targetPos = playerInst.transform.FindChild("cameraPosition").transform;
 
 
             myCam.player = playerInst.transform.FindChild("cameraTarget").transform;
 
-            playerInst.GetComponent<PlayerController>().Screen = cameraInst;            
+            playerInst.GetComponent<PlayerController>().Camera = cameraInst;            
         }
 
         if(playerInst == null && playerSpawned)

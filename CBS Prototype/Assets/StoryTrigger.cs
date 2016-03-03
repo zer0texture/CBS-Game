@@ -8,9 +8,10 @@ public class DialogLine
     public AudioClip m_Line = null;
     public float m_Time = 0;
 
-    public void Trigger(TextMessageHandler messageHandler = null)
+    public void Trigger()
     {
-        if(messageHandler != null && m_Subtitles != null )
+        TextMessageHandler messageHandler = TextMessageHandler.GetMessageHandler();
+        if (messageHandler != null && m_Subtitles != null )
         {
             if (m_Line != null)
                 m_Time = m_Line.length;
@@ -44,13 +45,14 @@ public class StoryTrigger : MonoBehaviour
         if (other.GetComponent<PlayerController>() && m_Interractable)
         {
             //other.GetComponent<AudioSource>().Play();
+
             m_Dialog = new DialogLine();
             m_Dialog.m_Line = m_Line;
             m_Dialog.m_Source = m_Source;
             m_Dialog.m_Subtitles = m_Subtitles;
             m_Dialog.m_Time = m_Time;
 
-            m_Dialog.Trigger(other.GetComponent<PlayerController>().Screen.transform.GetChild(0).GetComponent<TextMessageHandler>());
+            m_Dialog.Trigger();
             m_Interractable = false;
         }
     }

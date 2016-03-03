@@ -4,18 +4,15 @@ using UnityEngine.UI;
 
 public class TextMessageHandler : MonoBehaviour {
 
-
-    float m_PromptTimer;
     float m_DialogTimer;
 
-    float m_PromptExpire;
     float m_DialogExpire;
 
-    public void Prompt(string message, float time)
+    static TextMessageHandler m_Instance = null;
+
+    public static TextMessageHandler GetMessageHandler()
     {
-        transform.GetChild(0).GetComponent<Text>().text = message;
-        m_PromptExpire = time;
-        m_PromptTimer = 0;
+        return m_Instance;
     }
 
     public void Dialog(string message, float time)
@@ -29,8 +26,8 @@ public class TextMessageHandler : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        transform.GetChild(0).GetComponent<Text>().text = "";
         transform.GetChild(1).GetComponent<Text>().text = "";
+        m_Instance = this;
 
     }
 	
@@ -38,17 +35,11 @@ public class TextMessageHandler : MonoBehaviour {
 	void Update () {
 
         m_DialogTimer += Time.deltaTime;
-        m_PromptTimer += Time.deltaTime;
 
         if (m_DialogTimer >= m_DialogExpire)
         {
             transform.GetChild(1).GetComponent<Text>().text = "";
         }
-        if (m_PromptTimer >= m_PromptExpire)
-        {
-            transform.GetChild(0).GetComponent<Text>().text = "";
-        }
-
 
     }
 }
