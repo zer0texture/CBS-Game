@@ -102,6 +102,11 @@ public class CollectablesScript : buttonScript
     protected void EndPickup()
     {
         Time.timeScale = 1.0f;
+        EventTrigger trigger = GetComponent<EventTrigger>();
+        if(trigger != null)
+        {
+            trigger.Trigger();
+        }
         Destroy(gameObject);
 
         if(m_Type == collectType.END_ITEM)
